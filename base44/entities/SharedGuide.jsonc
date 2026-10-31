@@ -1,0 +1,64 @@
+{
+  "name": "SharedGuide",
+  "type": "object",
+  "properties": {
+    "app_name": {
+      "type": "string",
+      "description": "Display name of the app the shared guide covers."
+    },
+    "slug": {
+      "type": "string",
+      "description": "Guide slug, so the viewer can open the same app in the library."
+    },
+    "guide": {
+      "type": "object",
+      "description": "Immutable snapshot of the guide as it was when the link was created."
+    },
+    "progress": {
+      "type": "object",
+      "description": "Snapshot of the sharer's step statuses, keyed by step_id."
+    },
+    "steps_completed": {
+      "type": "number"
+    },
+    "steps_total": {
+      "type": "number"
+    },
+    "shared_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "app_name",
+    "guide"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

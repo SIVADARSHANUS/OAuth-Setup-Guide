@@ -1,0 +1,307 @@
+{
+  "name": "Guide",
+  "type": "object",
+  "properties": {
+    "app_name": {
+      "type": "string",
+      "description": "Display name of the app being connected, e.g. Google."
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL slug used for /apps/:slug."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Canonical developer documentation domain."
+    },
+    "monogram": {
+      "type": "string",
+      "description": "One to three characters shown in the logo tile."
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "path_key": {
+      "type": "string",
+      "enum": [
+        "custom_oauth_app",
+        "managed_oauth",
+        "api_key",
+        "mixed"
+      ],
+      "description": "Recommended way to connect."
+    },
+    "path_label": {
+      "type": "string"
+    },
+    "path_reason": {
+      "type": "string",
+      "description": "Plain-language explanation of why this path is recommended."
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "advanced"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "active_effort_min": {
+      "type": "number",
+      "description": "Lower bound of active setup effort in minutes. Not calendar time."
+    },
+    "active_effort_max": {
+      "type": "number"
+    },
+    "external_wait_label": {
+      "type": "string",
+      "description": "Provider review or approval wait, kept separate from active effort."
+    },
+    "review_required": {
+      "type": "boolean"
+    },
+    "review_summary": {
+      "type": "string",
+      "description": "When review applies and when it does not."
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "instructions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fields": {
+            "type": "array",
+            "description": "Values the person must collect or type in this step.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "hint": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "tips": {
+            "type": "array",
+            "description": "Short warnings about what goes wrong in this step.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "active_minutes": {
+            "type": "number"
+          },
+          "owner": {
+            "type": "string",
+            "enum": [
+              "developer",
+              "agent"
+            ]
+          },
+          "done_when": {
+            "type": "string"
+          },
+          "portal_label": {
+            "type": "string"
+          },
+          "portal_url": {
+            "type": "string"
+          },
+          "doc_label": {
+            "type": "string"
+          },
+          "doc_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "next_action": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "official",
+              "community"
+            ]
+          },
+          "retrieved_at": {
+            "type": "string"
+          },
+          "supports": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "coverage_audit": {
+      "type": "array",
+      "description": "Provider-documentation audit of required integration setup areas.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "area": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "covered",
+              "not_applicable",
+              "needs_confirmation"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          },
+          "doc_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "last_verified": {
+      "type": "string",
+      "format": "date"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "curated",
+        "generated"
+      ]
+    },
+    "popular_rank": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "app_name",
+    "slug",
+    "steps"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

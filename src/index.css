@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 29% 97%;
+    --foreground: 26 12% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 26 12% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 26 12% 12%;
+
+    --primary: 26 12% 12%;
+    --primary-foreground: 45 33% 97%;
+
+    --secondary: 40 22% 94%;
+    --secondary-foreground: 26 12% 12%;
+
+    --muted: 40 24% 95%;
+    --muted-foreground: 32 6% 44%;
+
+    --accent: 40 26% 92%;
+    --accent-foreground: 26 12% 12%;
+
+    --destructive: 8 55% 46%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 34 20% 88%;
+    --input: 34 20% 88%;
+    --ring: 21 43% 32%;
+
+    --brand: 21 43% 32%;
+    --brand-soft: 28 45% 96%;
+    --success: 150 58% 33%;
+    --success-soft: 150 40% 95%;
+    --blocked: 8 55% 46%;
+    --blocked-soft: 10 55% 96%;
+    --warning: 33 72% 40%;
+    --warning-soft: 38 70% 95%;
+
+    --chart-1: 21 43% 32%;
+    --chart-2: 150 58% 33%;
+    --chart-3: 33 72% 40%;
+    --chart-4: 26 12% 12%;
+    --chart-5: 32 6% 44%;
+
+    --radius: 0.75rem;
+
+    --font-heading: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    --sidebar-background: 45 29% 97%;
+    --sidebar-foreground: 26 12% 12%;
+    --sidebar-primary: 26 12% 12%;
+    --sidebar-primary-foreground: 45 33% 97%;
+    --sidebar-accent: 40 26% 92%;
+    --sidebar-accent-foreground: 26 12% 12%;
+    --sidebar-border: 34 20% 88%;
+    --sidebar-ring: 21 43% 32%;
+  }
+
+  .dark {
+    --background: 26 10% 8%;
+    --foreground: 45 22% 94%;
+
+    --card: 26 9% 11%;
+    --card-foreground: 45 22% 94%;
+
+    --popover: 26 9% 11%;
+    --popover-foreground: 45 22% 94%;
+
+    --primary: 45 22% 94%;
+    --primary-foreground: 26 12% 12%;
+
+    --secondary: 26 8% 16%;
+    --secondary-foreground: 45 22% 94%;
+
+    --muted: 26 8% 15%;
+    --muted-foreground: 34 8% 63%;
+
+    --accent: 26 8% 18%;
+    --accent-foreground: 45 22% 94%;
+
+    --destructive: 8 55% 58%;
+    --destructive-foreground: 26 12% 12%;
+
+    --border: 26 8% 21%;
+    --input: 26 8% 21%;
+    --ring: 24 45% 60%;
+
+    --brand: 24 45% 62%;
+    --brand-soft: 24 20% 16%;
+    --success: 150 42% 54%;
+    --success-soft: 150 20% 15%;
+    --blocked: 8 55% 62%;
+    --blocked-soft: 8 22% 16%;
+    --warning: 36 62% 58%;
+    --warning-soft: 33 22% 16%;
+
+    --chart-1: 24 45% 62%;
+    --chart-2: 150 42% 54%;
+    --chart-3: 36 62% 58%;
+    --chart-4: 45 22% 94%;
+    --chart-5: 34 8% 63%;
+
+    --sidebar-background: 26 9% 11%;
+    --sidebar-foreground: 45 22% 94%;
+    --sidebar-primary: 45 22% 94%;
+    --sidebar-primary-foreground: 26 12% 12%;
+    --sidebar-accent: 26 8% 18%;
+    --sidebar-accent-foreground: 45 22% 94%;
+    --sidebar-border: 26 8% 21%;
+    --sidebar-ring: 24 45% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "ss01" 1;
+  }
+
+  ::selection {
+    background-color: hsl(var(--brand) / 0.16);
+  }
+}
